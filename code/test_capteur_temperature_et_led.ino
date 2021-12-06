@@ -29,9 +29,9 @@ void loop() {
   Serial.println(F("°C"));
 
   if(t<= 20){
-    digitalWrite(led_chauffage,LOW);
+    digitalWrite(led_chauffage,LOW); //le chauffage s'allume sous la barre du thermostat
     }
   else{
-    digitalWrite(led_chauffage,HIGH);
+    digitalWrite(led_chauffage,HIGH); //le chauffage d'éteint en dépassant le thermostat
   }
 }
