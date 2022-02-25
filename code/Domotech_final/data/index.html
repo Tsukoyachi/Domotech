@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Domotech</title>
+    <meta name='viewport' content='width=device-width, intital-scale-1' charset='UTF-8'>
+    <link rel='stylesheet' type='text/css' href='w3.css'>
+    <script type='text/javascript' src='jquery-3.6.0.min.js'></script>
+    <script type='text/javascript' src='script.js'></script>
+</head>
+
+<body class='w3-light-grey'>
+    <title>DomoTech</title>
+    <h1 class='w3-grey w3-container w3-center w3-text-white' style='text-shadow:1px 1px 0 #444'>Site internet pour la
+        gestion du projet arduino</h1>
+    <div class='w3-card-4 w3-padding-16 w3-white'>
+
+        <header class='w3-container w3-blue' style='text-align: center; text-shadow:1px 1px 0 #444;'>
+            <h2>État actuel de l'algorithme :</h2>
+        </header>
+
+        <div class='w3-container'>
+            <div class="w3-row">
+                <div class="w3-col s7 ">
+                    <ul class='w3-ul w3-card-4 w3-margin-top' style='width: 90%'>
+                        <li>
+                            <p>Etat chauffage : <span id='boolean_chauffage'>0</span></p>
+                        </li>
+                        <li>
+                            <p>Etat fenêtre : <span id='boolean_fenetre'>0</span></p>
+                        </li>
+                        <li>
+                            <p>Etat lumière : <span id='boolean_lumiere'>0</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w3-col s5">
+                    <div class="w3-card w3-padding-16 w3-margin-top" style='width: 90%'>
+                        <a class='w3-margin-top' style='margin-left: 10%;'>
+                            <img style='width:70%;'
+                                src=https://polytech.univ-cotedazur.fr/uas/composante-polytech/LOGO/image_full.png
+                                alt="Logo Polytech Nice Sophia" style="width:100%">
+                        </a>
+                        <div class="w3-container" style='text-align: center;'>
+                            <h4><b>Domotech</b></h4>
+                            <p>La maison à notre façon.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <footer>
+            <div class='w3-panel w3-pale-blue w3-leftbar w3-rightbar w3-border-blue'>
+                <p>Le programme arduino cherche selon les valeurs des capteurs quelles actions la maison doit effecturer
+                    pour respecter les envies/besoins de l'utilisateur, ce sont ses décisions qui sont affichées
+                    ci-dessus.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    </div>
+
+    <br>
+
+    <div class='w3-card-4 w3-padding-16 w3-white'>
+
+        <header class='w3-container w3-blue' style='text-align: center; text-shadow:1px 1px 0 #444;'>
+            <h2>Valeur des capteurs :</h2>
+        </header>
+
+        <div class='w3-container'>
+            <div class="w3-row">
+                <div class="w3-col s8">
+                    <ul class='w3-ul w3-card-4 w3-margin-top' style='width: 90%'>
+                        <li>
+                            <p>Capteur température : <span id='temperature'>0</span> °C</p>
+                        </li>
+                        <li>
+                            <p>Capteur lumière intérieur : <span id='lumiere_int'>0</span> lx</p>
+                        </li>
+                        <li>
+                            <p>Capteur lumière extérieur : <span id='lumiere_ext'>0</span> lx</p>
+                        </li>
+                        <li>
+                            <p>Capteur CO2 : <span id='mq2'>0</span> ppm</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w3-col s4">
+                    <div class="w3-card w3-padding-16 w3-margin-top" style='width: 70%'>
+                        <a class='w3-margin-top' style='margin-left: 15%;'>
+                            <img style='width:70%;'
+                                src=https://s2.qwant.com/thumbr/0x380/7/2/1e534ac6e2e8a5fac03a8abf3e4f99c1379c3cb4cd2de9335bc607eb44aef8/depositphotos_181011104-stock-illustration-house-tree-real-estate-image.jpg?u=https%3A%2F%2Fst3.depositphotos.com%2F1364916%2F18101%2Fv%2F450%2Fdepositphotos_181011104-stock-illustration-house-tree-real-estate-image.jpg&q=0&b=1&p=0&a=0
+                                alt="Logo Maison Stylée" style="width:100%">
+                        </a>
+                        <div class="w3-container" style='text-align: center;'>
+                            <h4><b>Domotech</b></h4>
+                            <p>La maison à notre façon.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <footer>
+            <div class='w3-panel w3-pale-blue w3-leftbar w3-rightbar w3-border-blue'>
+                <p>Ici sont affichées les valeurs brutes des capteurs du code. Elles vous permettront de prendre des
+                    décisions si vous souhaitez prendre la main sur l'algorithme.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    </div>
+
+    <br>
+
+    <div class='w3-card-4 w3-padding-16 w3-white'>
+
+        <header class='w3-container w3-blue' style='text-align: center; text-shadow:1px 1px 0 #444;'>
+            <h2>Interactions avec la maison :</h2>
+        </header>
+
+        <div class='w3-container'>
+            <ul class='w3-ul w3-card-4 w3-margin-top'>
+                <li>
+                    <h3 class='w3-show-inline-block'>Lumière :</h3>
+                    <div class="w3-bar">
+                        <button onclick="onButton('lumiere')" class="w3-button w3-black">Allumée</button>
+                        <button onclick="offButton('lumiere')" class="w3-button w3-teal">Eteinte</button>
+                        <button onclick="resetButton('lumiere')" class="w3-button w3-red">Automatique</button>
+                    </div>
+                    <h3>Statut : <span id='user_lumiere'>Contrôlé par l'algorithme</span></h3>
+                </li>
+                <li>
+                    <h3 class='w3-show-inline-block'>Chauffage :</h3>
+                    <div class="w3-bar">
+                        <button onclick="onButton('chauffage')" class="w3-button w3-black">Allumé</button>
+                        <button onclick="offButton('chauffage')" class="w3-button w3-teal">Eteint</button>
+                        <button onclick="resetButton('chauffage')" class="w3-button w3-red">Automatique</button>
+                    </div>
+                    <h3>Statut : <span id='user_chauffage'>Contrôlé par l'algorithme</span></h3>
+                </li>
+                <li>
+                    <h3 class='w3-show-inline-block'>Fenêtre :</h3>
+                    <div class="w3-bar">
+                        <button onclick="onButton('fenetre')" class="w3-button w3-black">Ouverte</button>
+                        <button onclick="offButton('fenetre')" class="w3-button w3-teal">Fermée</button>
+                        <button onclick="resetButton('fenetre')" class="w3-button w3-red">Automatique</button>
+                    </div>
+                    <h3>Statut : <span id='user_fenetre'>Contrôlé par l'algorithme</span></h3>
+                </li>
+            </ul>
+
+            <br><br>
+
+            <div class="w3-margin w3-center w3-card w3-padding-24">
+                <h3 class="w3-padding">Changement de la valeur du thermostat </h3>
+        
+                <select id="choixThermostat" class="w3-select" style="width:80%;">
+                    <option value="" disabled selected>Choisir une température</option>
+                    <option value="15"> 15°C</option>
+                    <option value="16"> 16°C</option>
+                    <option value="17"> 17°C</option>
+                    <option value="18"> 18°C</option>
+                    <option value="19"> 19°C</option>
+                    <option value="20"> 20°C</option>
+                    <option value="21"> 21°C</option>
+                    <option value="22"> 22°C</option>
+                    <option value="23"> 23°C</option>
+                    <option value="24"> 24°C</option>
+                    <option value="25"> 25°C</option>
+                </select>
+                
+                <br><br>
+        
+                <button id="appliquerThermostat" class="w3-button w3-white w3-border w3-xlarge w3-ripple w3-wide">Appliquer</button>
+                <br><br>
+                <h3>Thermostat actuel : <span id="thermostat_value">20</span>°C</h3>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class='w3-center w3-padding-16'>
+        <i>Ce serveur est hébergé sur ESP32, il a été fait et designé par Axel Delille.</i>
+    </div>
+</body>
+
+</html>
