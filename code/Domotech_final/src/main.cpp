@@ -19,7 +19,7 @@ AsyncWebServer server(80);
 
 #define SDA 21
 #define SCL 22
-#define servo 18
+#define servo 17
 #define DHTPIN 25
 #define DHTTYPE DHT22
 #define MQ2 36
@@ -339,16 +339,16 @@ void loop()
   // Gestion ouverture et fermeture fenêtre en prenant en compte l'algorithme et les choix de l'utilisateur
   if (controle_fenetre)
   {
-    if (user_fenetre && pos != 180)
+    if (user_fenetre && pos != 100)
     {
-      for(pos;pos<=180; pos+=5){
+      for(pos;pos<=100; pos+=5){
         myservo.write(pos);
         delay(50);
       }
     }
-    else if (!user_fenetre && pos != 90)
+    else if (!user_fenetre && pos != 0)
     {
-      for(pos;pos>=90; pos-=5){
+      for(pos;pos>=0; pos-=5){
         myservo.write(pos);
         delay(50);
       }
@@ -356,16 +356,16 @@ void loop()
   }
   else
   {
-    if (fenetre && pos != 180)
+    if (fenetre && pos != 100)
     {
-      for(pos;pos<=180; pos+=5){
+      for(pos;pos<=100; pos+=5){
         myservo.write(pos);
         delay(50);
       }
     }
-    else if (!fenetre && pos != 90)
+    else if (!fenetre && pos != 0)
     {
-      for(pos;pos>=90; pos-=5){
+      for(pos;pos>=0; pos-=5){
         myservo.write(pos);
         delay(50);
       }
