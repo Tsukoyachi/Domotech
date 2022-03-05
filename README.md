@@ -5,7 +5,7 @@ ___________________________________________________
 Model of a home automation system based on arduino
 
 # Feature :
-- [x] Functional base with automated light, heat, and window
+- [x] Functional base with automated light, heat, and aeration
 - [x] Make functional website to view sensor values, control the house and modify the thermostat
 
 # Future ideas :
