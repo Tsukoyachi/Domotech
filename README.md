@@ -1,8 +1,8 @@
 # Domotech
-Model of a home automation system based on arduino
+Maquette de système domotique basée sur arduino.
 ___________________________________________________
 
-Maquette de système domotique basée sur arduino.
+Model of a home automation system based on arduino
 
 Feature :
 - [x] Functional base with automated light, heat, and window
