@@ -13,7 +13,7 @@
 #include <WiFi.h>
 
 const char *ssid = "Redmi Note 10 Pro";
-const char *password = "31102002";
+const char *password = "Domotech";
 
 AsyncWebServer server(80);
 
