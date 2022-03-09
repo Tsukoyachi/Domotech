@@ -271,7 +271,10 @@ void loop()
   Serial.print("Luminosité extérieur : ");
   Serial.print(lux_ext);
   Serial.print(" lx | ");
-  temperature = dht.readTemperature();
+  float newTemperature = dht.readTemperature();
+  if(!isnan(newTemperature)){
+    temperature=newTemperature;
+  }
   Serial.print("Température : ");
   Serial.print(temperature);
   Serial.print(" °C | ");
